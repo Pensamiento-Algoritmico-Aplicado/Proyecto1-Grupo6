@@ -1,23 +1,13 @@
-# Proyecto PAA
+#     Proyecto 1 — Planificación de Tareas
 
-## Descripción
-Este es un proyecto de Programación de Algoritmos Avanzados (PAA).
+Integrantes:
 
-## Requisitos
-- Python 3.x
-- Dependencias listadas en `requiremets.txt`
+- Matias Osorio 
+- Tomas Moya 
+- Joaquin Gonzalez
 
-## Instalación
-1. Clona el repositorio.
-2. Crea un entorno virtual: `python -m venv .venv`
-3. Activa el entorno: `source .venv/bin/activate`
-4. Instala las dependencias: `pip install -r requiremets.txt`
-
-## Uso
-Ejecuta el script principal: `python main.py`
-
-## Contribución
-Contribuciones son bienvenidas. Por favor, abre un issue o pull request.
-
-## Licencia
-[Especifica la licencia aquí]
+# # Cómo ejecutar
+1. Crear virtual environment: `python -m venv .venv`
+2. Activar: `source .venv/bin/activate`
+3. Instalar dependencias: `pip install -r requirements.txt`
+4. Ejecutar: `python main.py <makespan_objetivo>`

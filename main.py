@@ -28,7 +28,7 @@ class Assignment:
     resource_id: str
     start: int
     end: int
-
+#Assignment representa la asignación de una tarea a un recurso, con un tiempo de inicio y fin. También es inmutable.
 
 def read_tasks(file_path: Path) -> List[Task]:
     tasks: List[Task] = []
@@ -42,7 +42,7 @@ def read_tasks(file_path: Path) -> List[Task]:
             category = row[2].strip()
             tasks.append(Task(task_id, duration, category))
     return tasks
-
+#Read_tasks lee un archivo CSV de tareas y devuelve una lista de objetos Task. Cada fila del archivo debe contener el identificador de la tarea, su duración y su categoría. El método utiliza csv.reader para leer el archivo y crea instancias de Task a partir de cada fila, que luego se agregan a la lista tasks.
 
 def read_resources(file_path: Path) -> List[Resource]:
     resources: List[Resource] = []

@@ -6,20 +6,21 @@ import time
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Dict, List, Optional, Set, Tuple
-
+#from_future_import annotations es para permitir usar tipos como List[Task] sin necesidad de importarlos antes, lo que ayuda a evitar problemas de importación circular y mejora la legibilidad del código.
+#Importamos csv para leer y escribir archivos CSV, sys para acceder a argumentos de línea de comandos, time para medir el tiempo de ejecución, dataclass para definir clases de datos de manera concisa, Path para manejar rutas de archivos, y varios tipos de typing para anotaciones de tipos.
 
 @dataclass(frozen=True)
 class Task:
     task_id: str
     duration: int
     category: str
-
-
+#Dataclass es un decorador que se utiliza para crear clases de datos de manera más sencilla. En este caso, Task representa una tarea con un identificador, duración y categoría. El parámetro frozen=True hace que las instancias de esta clase sean inmutables, lo que significa que sus atributos no pueden ser modificados después de la creación.
+#Task tiene tres atributos: task_id (un string que identifica la tarea), duration (un entero que representa la duración de la tarea) y category (un string que indica la categoría a la que pertenece la tarea).
 @dataclass(frozen=True)
 class Resource:
     resource_id: str
     categories: frozenset[str]
-
+#Resource representa un recurso con un identificador y un conjunto de categorías que puede manejar. Al igual que Task, es inmutable.
 
 @dataclass(frozen=True)
 class Assignment:

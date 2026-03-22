@@ -94,6 +94,10 @@ def build_schedule_from_resource_tasks(
 
     return assignments
 # - Para cada recurso, suma la duración de todas las tareas que tiene asignadas.
+# Esta función construye estructuras auxiliares para trabajar con tareas y recursos.
+# - Crea un diccionario de tareas (task_map) donde la clave es el ID de la tarea
+#   y el valor es el objeto Task correspondiente.
+# - Crea un diccionario de recursos (resource_map) donde la clave es el ID del recurso
 
 def compute_resource_loads(
     resource_to_tasks: Dict[str, List[str]],
@@ -104,12 +108,18 @@ def compute_resource_loads(
         loads[resource_id] = sum(task_map[task_id].duration for task_id in task_ids)
     return loads
 # - Genera un diccionario donde la clave es el ID del recurso
+# Retorna una lista de asignaciones que representa el cronograma completo.
+# Cada asignación indica qué tarea se ejecuta en qué recurso y en qué intervalo de tiempo.
+# - Recibe un diccionario que indica qué tareas están asignadas a cada recurso.
+# - Para cada recurso, ejecuta sus tareas en orden secuencial (una después de otra).
+# - Calcula el tiempo de inicio (start) y término (end) de cada tarea acumulando duraciones.
 
 def compute_makespan_from_loads(loads: Dict[str, int]) -> int:
     if not loads:
         return 0
     return max(loads.values())
 #   y el valor es el tiempo total de trabajo (carga).
+
 
 def compute_makespan(assignments: List[Assignment]) -> int:
     if not assignments:

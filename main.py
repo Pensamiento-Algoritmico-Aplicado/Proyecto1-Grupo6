@@ -436,7 +436,7 @@ def main() -> None:
     )
 #cintento commit
 #otro cambio para probar
-
+#Hola, prueba oficial del error. 
 
     assignments = build_schedule_from_resource_tasks(resource_to_tasks, task_map)
 

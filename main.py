@@ -29,7 +29,15 @@ class Assignment:
     start: int
     end: int
 #Assignment representa la asignación de una tarea a un recurso, con un tiempo de inicio y fin. También es inmutable.
-
+#aaaa
+#aaa
+#aaaa
+#aaaa
+#aaaa
+#aaaaaaaa
+##aaaaaaa
+##aaaaaa
+#aaaaaaaa funcionaaaaaaaa
 def read_tasks(file_path: Path) -> List[Task]:
     tasks: List[Task] = []
     with file_path.open("r", newline="", encoding="utf-8") as f:

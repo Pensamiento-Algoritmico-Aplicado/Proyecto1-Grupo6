@@ -75,7 +75,7 @@ def build_compatibility(
         compatible_resources[task.task_id] = compatibles
 
     return task_map, resource_map, compatible_resources
-
+# Esta función calcula la carga total de trabajo por recurso.
 
 def build_schedule_from_resource_tasks(
     resource_to_tasks: Dict[str, List[str]],
@@ -93,7 +93,7 @@ def build_schedule_from_resource_tasks(
             current_time = end
 
     return assignments
-
+# - Para cada recurso, suma la duración de todas las tareas que tiene asignadas.
 
 def compute_resource_loads(
     resource_to_tasks: Dict[str, List[str]],
@@ -103,19 +103,19 @@ def compute_resource_loads(
     for resource_id, task_ids in resource_to_tasks.items():
         loads[resource_id] = sum(task_map[task_id].duration for task_id in task_ids)
     return loads
-
+# - Genera un diccionario donde la clave es el ID del recurso
 
 def compute_makespan_from_loads(loads: Dict[str, int]) -> int:
     if not loads:
         return 0
     return max(loads.values())
-
+#   y el valor es el tiempo total de trabajo (carga).
 
 def compute_makespan(assignments: List[Assignment]) -> int:
     if not assignments:
         return 0
     return max(a.end for a in assignments)
-
+# Esto permite analizar qué recursos están más ocupados.
 
 def verify_solution(
     tasks: List[Task],
@@ -434,9 +434,7 @@ def main() -> None:
         time_limit_seconds=8.5,
         start_time=program_start,
     )
-#cintento commit
-#otro cambio para probar
-#Hola, prueba oficial del error. 
+
 
     assignments = build_schedule_from_resource_tasks(resource_to_tasks, task_map)
 

@@ -29,15 +29,7 @@ class Assignment:
     start: int
     end: int
 #Assignment representa la asignación de una tarea a un recurso, con un tiempo de inicio y fin. También es inmutable.
-#aaaa
-#aaa
-#aaaa
-#aaaa
-#aaaa
-#aaaaaaaa
-##aaaaaaa
-##aaaaaa
-#aaaaaaaa funcionaaaaaaaa
+
 def read_tasks(file_path: Path) -> List[Task]:
     tasks: List[Task] = []
     with file_path.open("r", newline="", encoding="utf-8") as f:
@@ -51,6 +43,9 @@ def read_tasks(file_path: Path) -> List[Task]:
             tasks.append(Task(task_id, duration, category))
     return tasks
 #Read_tasks lee un archivo CSV de tareas y devuelve una lista de objetos Task. Cada fila del archivo debe contener el identificador de la tarea, su duración y su categoría. El método utiliza csv.reader para leer el archivo y crea instancias de Task a partir de cada fila, que luego se agregan a la lista tasks.
+#For row in reader: itera sobre cada fila del archivo CSV. Si la fila está vacía, se omite. Luego, se extraen los valores de task_id, duration y category de la fila, se limpian de espacios en blanco y se crean objetos Task que se agregan a la lista tasks.
+#If not row es una verificación para asegurarse de que no se procesen filas vacías, lo que podría causar errores al intentar acceder a índices que no existen.
+#Entonces, el archivo es un formulario en filas. Cada fila es una tarea.La función lee cada formulario, separa campos, crea el objeto y guarda en lista. Al final te devuelve el “inventario” de tareas para usar en el algoritmo.
 
 def read_resources(file_path: Path) -> List[Resource]:
     resources: List[Resource] = []
@@ -63,6 +58,7 @@ def read_resources(file_path: Path) -> List[Resource]:
             categories = frozenset(cell.strip() for cell in row[1:] if cell.strip())
             resources.append(Resource(resource_id, categories))
     return resources
+#Read_resources lee un archivo CSV de recursos y devuelve una lista de objetos Resource. Cada fila del archivo debe contener el identificador del recurso seguido de las categorías que puede manejar. El método utiliza csv.reader para leer el archivo y crea instancias de Resource a partir de cada fila, que luego se agregan a la lista resources.
 
 
 def build_compatibility(

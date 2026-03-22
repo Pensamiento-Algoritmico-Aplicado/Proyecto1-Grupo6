@@ -134,7 +134,13 @@ def verify_solution(
 ) -> bool:
     task_map: Dict[str, Task] = {t.task_id: t for t in tasks}
     resource_map: Dict[str, Resource] = {r.resource_id: r for r in resources}
-
+#Verify_solution Valida que la solución de asignación de tareas sea correcta, verificando que:
+#1.Todas las tareas estén asignadas exactamente una vez
+#2.Las tareas se asignen a recursos compatibles
+#3.Las tareas no se solapen en el tiempo dentro del mismo recurso
+#4.Las categorías de las tareas sean compatibles con los recursos asignados
+#5. No haya sobreposiciones de tareas en un mismo recurso
+#6. Las duraciones de las asignaciones coincidan con la duración real de cada tarea
     if len(assignments) != len(tasks):
         return False
 

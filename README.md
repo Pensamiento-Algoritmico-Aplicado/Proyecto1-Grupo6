@@ -25,4 +25,16 @@ Integrantes:
                  └─────────────┬───────────────┘
                                │
                                v
-
+                 ┌─────────────────────────────┐
+                 │ Construir compatibilidades  │
+                 │ tarea → recursos válidos    │
+                 └─────────────┬───────────────┘
+                               │
+                               v
+                 ┌─────────────────────────────┐
+                 │ Ordenar tareas              │
+                 │ 1. menos compatibles        │
+                 │ 2. mayor duración           │
+                 └─────────────┬───────────────┘
+                               │
+                               v

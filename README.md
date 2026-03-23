@@ -15,7 +15,7 @@ Integrantes:
 
 
 
- ##  Funcionamiento del programa
+ # Funcionamiento del programa
 
                  ┌─────────────────────────────┐
                  │         Inicio              │

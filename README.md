@@ -9,3 +9,20 @@ Integrantes:
 2. Activar: `source .venv/bin/activate`
 3. Instalar dependencias: `pip install -r requirements.txt`
 4. Ejecutar: `python main.py <makespan_objetivo>`
+
+
+
+##Funcionamiento del programa
+
+                 ┌─────────────────────────────┐
+                 │         Inicio              │
+                 └─────────────┬───────────────┘
+                               │
+                               v
+                 ┌─────────────────────────────┐
+                 │ Leer tareas.txt y           │
+                 │ recursos.txt                │
+                 └─────────────┬───────────────┘
+                               │
+                               v
+

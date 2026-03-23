@@ -476,3 +476,5 @@ if __name__ == "__main__":
     main()
 
 #Este código es un programa de asignación de tareas a recursos con el objetivo de minimizar el makespan (el tiempo total para completar todas las tareas). El programa lee tareas y recursos desde archivos CSV, construye una solución inicial basada en heurísticas, y luego mejora esa solución utilizando una búsqueda local. Finalmente, verifica la validez de la solución y escribe los resultados en un archivo de salida.
+
+

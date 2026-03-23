@@ -38,3 +38,17 @@ Integrantes:
                  └─────────────┬───────────────┘
                                │
                                v
+                 ┌─────────────────────────────┐
+                 │ Construcción inicial        │
+                 │ Asignar cada tarea al       │
+                 │ recurso que minimiza carga  │
+                 └─────────────┬───────────────┘
+                               │
+                               v
+                 ┌─────────────────────────────┐
+                 │ Mejora local                │
+                 │ - mover tareas              │
+                 │ - intercambiar tareas       │
+                 │ - reordenar dentro          │
+                 │   del recurso               │
+                 └─────────────┬───────────────┘

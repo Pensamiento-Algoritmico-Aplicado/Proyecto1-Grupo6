@@ -52,3 +52,30 @@ Integrantes:
                  │ - reordenar dentro          │
                  │   del recurso               │
                  └─────────────┬───────────────┘
+                 ┌─────────────────────────────┐
+                 │ Verificar solución          │
+                 │ - compatibilidad            │
+                 │ - no solapamiento           │
+                 │ - completitud               │
+                 │ - tiempos válidos           │
+                 └─────────────┬───────────────┘
+                               │
+                     ¿solución válida?
+                        /           \\
+                      no             sí
+                      |               |
+                      v               v
+          ┌──────────────────┐   ┌──────────────────────┐
+          │ Reportar error   │   │ Escribir output.txt  │
+          └──────────────────┘   └──────────┬───────────┘
+                                            │
+                                            v
+                                 ┌────────────────────────┐
+                                 │ Calcular makespan y    │
+                                 │ tiempo de ejecución    │
+                                 └──────────┬─────────────┘
+                                            │
+                                            v
+                                 ┌────────────────────────┐
+                                 │          Fin           │
+                                 └────────────────────────┘

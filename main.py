@@ -428,8 +428,8 @@ def main() -> None:
             print("Advertencia: makespan_objetivo inválido. Se ignorará.")
 
     base_dir = Path(__file__).resolve().parent
-    tasks_file = base_dir / "tareas.txt"
-    resources_file = base_dir / "recursos.txt"
+    tasks_file = base_dir / "tareas_EP.txt"
+    resources_file = base_dir / "recursos_EP.txt"
     output_file = base_dir / "output.txt"
 
     tasks = read_tasks(tasks_file)

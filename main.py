@@ -98,3 +98,27 @@ def build_output(r_to_t, task_map):
             out.append((t, r, current, current + d))
             current += d
     return out
+def main():
+    start = time.perf_counter()
+
+    base = Path(__file__).parent
+    tasks = read_tasks(base / "tareas.txt")
+    resources = read_resources(base / "recursos.txt")
+
+    compat, r_cats, cat_map = build_compat(tasks, resources)
+    r_to_t, loads, task_map = greedy(tasks, resources, compat, r_cats, cat_map)
+
+    # Dos mejoras rápidas, igual que tu idea original
+    improve_once(r_to_t, loads, task_map, compat)
+    improve_once(r_to_t, loads, task_map, compat)
+
+    result = build_output(r_to_t, task_map)
+
+    with open(base / "output.txt", "w", newline="", encoding="utf-8") as f:
+        csv.writer(f).writerows(result)
+
+    print("Makespan:", max(loads.values(), default=0))
+    print("Tiempo:", time.perf_counter() - start)
+
+if __name__ == "__main__":
+    main()

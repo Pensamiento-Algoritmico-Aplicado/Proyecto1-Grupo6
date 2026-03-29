@@ -88,3 +88,13 @@ def improve_once(r_to_t, loads, task_map, compat):
             return True
 
     return False
+
+def build_output(r_to_t, task_map):
+    out = []
+    for r, ts in r_to_t.items():
+        current = 0
+        for t in ts:
+            d = task_map[t]
+            out.append((t, r, current, current + d))
+            current += d
+    return out

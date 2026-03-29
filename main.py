@@ -54,3 +54,37 @@ def greedy(tasks, resources, compat, r_cats, cat_map):
             heapq.heappush(heaps[rc], new_state)
 
     return r_to_t, loads, task_map
+def improve_once(r_to_t, loads, task_map, compat):
+    max_r = max(loads, key=loads.get)
+    max_load = loads[max_r]
+
+    if not r_to_t[max_r]:
+        return False
+
+    # Probar primero tareas más grandes del recurso crítico
+    indexed = sorted(
+        enumerate(r_to_t[max_r]),
+        key=lambda p: -task_map[p[1]]
+    )
+
+    for idx, t in indexed:
+        d = task_map[t]
+
+        best_r = None
+        best_load = max_load
+
+        for r in compat[t]:
+            if r == max_r:
+                continue
+            if loads[r] < best_load:
+                best_load = loads[r]
+                best_r = r
+
+        if best_r is not None and loads[best_r] + d < max_load:
+            r_to_t[max_r].pop(idx)
+            r_to_t[best_r].append(t)
+            loads[max_r] -= d
+            loads[best_r] += d
+            return True
+
+    return False

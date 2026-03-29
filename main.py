@@ -27,20 +27,20 @@ def greedy(tasks, resources, compat, r_cats, cat_map):
     loads = {r: 0 for r, _ in resources}
     task_map = {t: d for t, d, _ in tasks}
 
-    # Un heap por categoría: (carga_actual, recurso)
+    
     heaps = {}
     for c, rs in cat_map.items():
         h = [(0, r) for r in rs]
         heapq.heapify(h)
         heaps[c] = h
 
-    # Ordenar una vez: largas primero
+    
     tasks_sorted = sorted(tasks, key=lambda x: -x[1])
 
     for t, d, c in tasks_sorted:
         h = heaps[c]
 
-        # Lazy deletion: si la carga del heap está vieja, la descartamos
+        
         while True:
             load, r = heapq.heappop(h)
             if load == loads[r]:
@@ -61,7 +61,7 @@ def improve_once(r_to_t, loads, task_map, compat):
     if not r_to_t[max_r]:
         return False
 
-    # Probar primero tareas más grandes del recurso crítico
+    
     indexed = sorted(
         enumerate(r_to_t[max_r]),
         key=lambda p: -task_map[p[1]]
@@ -108,7 +108,7 @@ def main():
     compat, r_cats, cat_map = build_compat(tasks, resources)
     r_to_t, loads, task_map = greedy(tasks, resources, compat, r_cats, cat_map)
 
-    # Dos mejoras rápidas, igual que tu idea original
+
     improve_once(r_to_t, loads, task_map, compat)
     improve_once(r_to_t, loads, task_map, compat)
 

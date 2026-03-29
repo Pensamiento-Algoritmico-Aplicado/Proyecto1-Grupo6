@@ -8,7 +8,7 @@ Integrantes:
 
 ## Cómo ejecutar
 
-1. Crear virtual environment: `python -m venv .venv`
+1. Crear virtual environment: `python -m venv .venv` Para mc y para Win `.venv\Scripts\Activate.ps1`
 2. Activar: `source .venv/bin/activate`
 3. Instalar dependencias: `pip install -r requirements.txt`
 4. Ejecutar: `python main.py <makespan_objetivo>`

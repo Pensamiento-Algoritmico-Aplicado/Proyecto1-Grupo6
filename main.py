@@ -11,3 +11,13 @@ def read_tasks(path):
 def read_resources(path):
     with open(path, newline="", encoding="utf-8") as f:
         return [(r[0], tuple(r[1:])) for r in csv.reader(f) if r]
+    
+def build_compat(tasks, resources):
+    cat_map = {}
+    r_cats = {}
+    for r, cats in resources:
+        r_cats[r] = cats
+        for c in cats:
+            cat_map.setdefault(c, []).append(r)
+    compat = {t: cat_map[c] for t, _, c in tasks}
+    return compat, r_cats, cat_map

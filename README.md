@@ -18,67 +18,58 @@ Integrantes:
  # Funcionamiento del programa
 
                  ┌─────────────────────────────┐
-                 │         Inicio              │
+                 │         Leer archivos       │
                  └─────────────┬───────────────┘
                                │
                                v
                  ┌─────────────────────────────┐
-                 │ Leer tareas.txt y           │
-                 │ recursos.txt                │
+                 │         Construir           │
+                 │       compatibilidad        │
                  └─────────────┬───────────────┘
                                │
                                v
                  ┌─────────────────────────────┐
-                 │ Construir compatibilidades  │
-                 │ tarea → recursos válidos    │
+                 │     Preparar el greedy      │
+                 │                             │
                  └─────────────┬───────────────┘
                                │
                                v
                  ┌─────────────────────────────┐
-                 │ Ordenar tareas              │
-                 │ 1. menos compatibles        │
-                 │ 2. mayor duración           │
+                 │        Crear heaps          │
+                 │       por categoria         │
+                 │                             │
                  └─────────────┬───────────────┘
                                │
                                v
                  ┌─────────────────────────────┐
-                 │ Construcción inicial        │
-                 │ Asignar cada tarea al       │
-                 │ recurso que minimiza carga  │
+                 │                             │
+                 │       Ordenar tareas        │
+                 │                             │
                  └─────────────┬───────────────┘
                                │
                                v
                  ┌─────────────────────────────┐
-                 │ Mejora local                │
-                 │ - mover tareas              │
-                 │ - intercambiar tareas       │
-                 │ - reordenar dentro          │
-                 │   del recurso               │
-                 └─────────────┬───────────────┘
-                 ┌─────────────────────────────┐
-                 │ Verificar solución          │
-                 │ - compatibilidad            │
-                 │ - no solapamiento           │
-                 │ - completitud               │
-                 │ - tiempos válidos           │
+                 │                             │
+                 │      Asignación greedy      │
+                 │                             │
                  └─────────────┬───────────────┘
                                │
-                     ¿solución válida?
-                        /           \\
-                      no             sí
-                      |               |
-                      v               v
-          ┌──────────────────┐   ┌──────────────────────┐
-          │ Reportar error   │   │ Escribir output.txt  │
-          └──────────────────┘   └──────────┬───────────┘
-                                            │
-                                            v
-                                 ┌────────────────────────┐
-                                 │ Calcular makespan y    │
-                                 │ tiempo de ejecución    │
-                                 └──────────┬─────────────┘
-                                            │
-                                            v
-                                 ┌────────────────────────┐
-                                 │          Fin           │
-                                 └────────────────────────┘
+                               v
+                 ┌─────────────────────────────┐
+                 │                             │
+                 │        Micro-mejora         │
+                 │                             │
+                 └─────────────┬───────────────┘
+                               │
+                 ┌─────────────────────────────┐
+                 │                             │
+                 │      Construir salida       │
+                 │                             │
+                 └─────────────┬───────────────┘
+                               │
+                               v
+                 ┌─────────────────────────────┐
+                 │                             │
+                 │     Guardar e imprimir      │
+                 │                             │
+                 └─────────────────────────────┘

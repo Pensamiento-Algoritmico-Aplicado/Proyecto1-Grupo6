@@ -61,7 +61,7 @@ def improve_once(r_to_t, loads, task_map, compat):
     if not r_to_t[max_r]:
         return False
 
-    
+
     indexed = sorted(
         enumerate(r_to_t[max_r]),
         key=lambda p: -task_map[p[1]]
